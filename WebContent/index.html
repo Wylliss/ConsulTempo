@@ -2,18 +2,31 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Consultempo</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<title>Consultempo</title>
 </head>
 
 <body>
-<h1>Consultempo</h1>
-<form action="ManterClima.do" method="post">
-	<input type="submit" name="acao" value="Tempo Real">
-	<input type="submit" name="acao" value="Previsao">
-</form>
-</body>
+	<h3 class="page-header">Consultempo</h3>
+	<form action="ManterClima.do" method="post">
 
+		<div class="row">
+			<div class="form-group col-md-12">
+				<input type="submit" name="acao" value="Tempo Real"> <input
+					type="submit" name="acao" value="Previsao">
+				<div id="actions" class="row">
+
+					<hr />
+
+				</div>
+			</div>
+		</div>
+	</form>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
