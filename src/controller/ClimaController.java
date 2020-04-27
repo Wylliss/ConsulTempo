@@ -43,9 +43,9 @@ public class ClimaController extends HttpServlet {
 			clima.setCidade((String) json.get("name"));
 			clima.setTemperatura((int) data.get("temperature"));
 			clima.setCondicao((String) data.get("condition"));
-			clima.setUmidade((int) data.get("humidity"));
-			clima.setVento((int) data.get("wind_velocity"));
-			clima.setPressao((int) data.get("pressure"));
+			clima.setUmidade((double) data.get("humidity"));
+			clima.setVento((double) data.get("wind_velocity"));
+			clima.setPressao((double) data.get("pressure"));
 			request.setAttribute("clima", clima);
 			dispatcher = request.getRequestDispatcher("TempoReal.jsp");
 			break;

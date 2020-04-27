@@ -5,11 +5,11 @@ public class Clima {
 	private String cidade;
 	private int temperatura;
 	private String condicao;
-	private int umidade;
-	private int vento;
-	private int pressao;
+	private double umidade;
+	private double vento;
+	private double pressao;
 	
-	public Clima(int temperatura, String condicao, int umidade, int vento, int pressao) {
+	public Clima(int temperatura, String condicao, double umidade, double vento, double pressao) {
 		cidade = "São Paulo";
 		this.temperatura = temperatura;
 		this.condicao = condicao;
@@ -45,27 +45,27 @@ public class Clima {
 		this.condicao = condicao;
 	}
 
-	public int getUmidade() {
+	public double getUmidade() {
 		return umidade;
 	}
 
-	public void setUmidade(int umidade) {
+	public void setUmidade(double umidade) {
 		this.umidade = umidade;
 	}
 
-	public int getVento() {
+	public double getVento() {
 		return vento;
 	}
 
-	public void setVento(int vento) {
+	public void setVento(double vento) {
 		this.vento = vento;
 	}
 
-	public int getPressao() {
+	public double getPressao() {
 		return pressao;
 	}
 
-	public void setPressao(int pressao) {
+	public void setPressao(double pressao) {
 		this.pressao = pressao;
 	}
 
