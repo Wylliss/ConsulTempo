@@ -9,6 +9,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -40,9 +41,15 @@ public class teste {
 
 	public static void main(String[] args) throws IOException, JSONException {
 		JSONObject json = readJsonFromUrl(
-				"http://apiadvisor.climatempo.com.br/api/v1/weather/locale/3477/current?token=25149dde939896af87233909d1ba3bfc");
-		JSONObject data = (JSONObject) json.get("data");
-		System.out.println(json.toString());
-		System.out.println("A temperatura neste momento em São Paulo é de " + data.get("temperature") + " °C");
+				"http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3477/days/15?token=25149dde939896af87233909d1ba3bfc");
+		JSONArray previsoes = (JSONArray) json.get("data");
+		//System.out.println(json.toString());
+		for (int i = 0; i < previsoes.length(); ++i) {
+		    JSONObject prev = previsoes.getJSONObject(i);
+		    JSONObject text = (JSONObject) prev.get("text_icon");
+		    JSONObject texto = (JSONObject) text.get("text");
+		    System.out.println(texto.toString());
+			//System.out.println(prev.getString("date_br") + ": " + text.getString("text"));
+		}
 	}
 }

@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="model.Clima"%>
+<%@ page import="model.Macroclima"%>
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 
 <style>
 body {
@@ -23,55 +22,48 @@ head {
 }
 </style>
 
-<head>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
 <title>Tempo Real</title>
-
 </head>
 
-
 <body>
-
-
 	<%
-		Clima clima = (Clima) request.getAttribute("clima");
+		Macroclima macroclima = (Macroclima) request.getAttribute("macroclima");
 	%>
 	<div id="main" class="container">
 		<h3 class="page-header">
-			<strong>Cidade</strong>: <strong><%=clima.getCidade()%></strong>
+			<strong>Cidade</strong>: <strong><%=macroclima.getCidade()%></strong>
 		</h3>
 		<div class="row">
 			<div class="col-md-12" style="background-color: #C0C0C0;">
 				<p>
 					Temperatura:
-					<%=clima.getTemperatura()%>
+					<%=macroclima.getTemperatura()%>
 					°C
 				</p>
 				<p>
 					Condição:
-					<%=clima.getCondicao()%></p>
+					<%=macroclima.getCondicao()%></p>
 				<p>
 					Umidade:
-					<%=clima.getUmidade()%>%
+					<%=macroclima.getUmidade()%>%
 				</p>
 				<p>
 					Vento:
-					<%=clima.getVento()%>
+					<%=macroclima.getVento()%>
 					km/h
 				</p>
 				<p>
 					Pressão:
-					<%=clima.getPressao()%>
+					<%=macroclima.getPressao()%>
 					hPa
 				</p>
 
+<div data-v-70bf4055="" class="topmenu"></div>
 			</div>
 		</div>
 		<hr />
@@ -83,7 +75,6 @@ head {
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
