@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<style>
-body {
-	background-image: url(img/frio.gif);
-	background-attachment: fixed;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-color: #0000
-}
-
-head {
-	background-image: url(img/chuva.gif);
-	background-attachment: fixed;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-color: #0000
-}
-</style>
-
-
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Consultempo</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultempo</title>
 </head>
 
-
-
-
-
 <body>
-<h1>Consultempo</h1>
-<form action="ManterClima.do" method="post">
-	<input type="submit" name="acao" value="Tempo Real">
-	<input type="submit" name="acao" value="Previsao">
-</form>
+	<h1>CONSULTEMPO</h1>
+	<h1>Você na frente sempre</h1>
+
+	<form action="ManterClima.do" method="post">
+		<input class="bt" type="submit" name="acao" value="Maquina do tempo">
+		<input class="bt" type="submit" name="acao" value="Tempo Real">
+		<input class="bt" type="submit" name="acao" value="Previsao">
+	</form>
+
 </body>
 
 </html>

@@ -3,8 +3,15 @@
  * style.css
  */
 body {
-	padding-top: 50px;
-	background-color: #D3D3D3;
+	background-image: url(img/frio.gif);
+	background-attachment: fixed;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #0000
+}
+
+head {
+
 }
 
 p {
@@ -13,7 +20,22 @@ p {
 	color: black;
 }
 
-h3 {
-	color: black;
-	font-size: 30px;
+h1 { "
+	font-size: 25px;
+	text-align: center;	
+	margin-left:200;
+	strong;
+}
+
+
+.bt {
+border:1px solid #25692A;
+border-radius:4px;
+display:inline-block;
+cursor:pointer;
+font-family:Verdana;
+font-weight:bold;
+font-size:20px;
+padding:20px 30px;
+text-decoration:none;
 }
