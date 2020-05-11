@@ -25,8 +25,8 @@ h1 { "
 	font-size: 25px;
 	text-align: center;
 	margin-left: 200;
-	strong;
-}
+	strong;	
+	}
 
 .bt {
 	border: 1px solid #25692A;
@@ -38,4 +38,7 @@ h1 { "
 	font-size: 20px;
 	padding: 20px 30px;
 	text-decoration: none;
+	
+	font-weigth:700;	
+	box-shadow: 0 5px 0 #006000
 }

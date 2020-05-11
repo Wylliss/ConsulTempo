@@ -25,24 +25,24 @@
 		<div class="row">
 			<div class="col-md-12" style="background-color: #C0C0C0;">
 				<p>
-					Temperatura:
+					<strong>Temperatura:</strong>
 					<%=macroclima.getTemperatura()%>
 					°C
 				</p>
 				<p>
-					Condição:
+					<strong>Condição:</strong>
 					<%=macroclima.getCondicao()%></p>
 				<p>
-					Umidade:
+					<strong>Umidade:</strong>
 					<%=macroclima.getUmidade()%>%
 				</p>
 				<p>
-					Vento:
+					<strong>Vento:</strong>
 					<%=macroclima.getVento()%>
 					km/h
 				</p>
 				<p>
-					Pressão:
+					<strong>Pressão:</strong>
 					<%=macroclima.getPressao()%>
 					hPa
 				</p>
