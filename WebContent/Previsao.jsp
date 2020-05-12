@@ -36,7 +36,7 @@
 					<%=p.getChuvaPrec()%>
 					mm<br> <label><strong>Chance de chuva:</strong></label>
 					<%=p.getChuvaProb()%>%
-				<p> <font color="Blue">******************* </font>
+				<p> <font color="Blue">***************************** </font>
 
 				<%
 					}

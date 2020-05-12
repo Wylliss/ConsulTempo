@@ -4,7 +4,7 @@
   */
 
 body {
-	background-image: url(img/frio.gif);
+	background-image: url(img/estac.gif);
 	background-attachment: fixed;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -37,7 +37,7 @@ h1 { "
 	font-weight: bold;
 	font-size: 20px;
 	padding: 20px 30px;
-	text-decoration: none;
+	text-transform: uppercase;
 	
 	font-weigth:700;	
 	box-shadow: 0 5px 0 #006000
