@@ -14,7 +14,9 @@
 </head>
 
 <body>
-	<h1><strong>Previsão do clima para próxima semana</strong></h1>
+	<h1>
+		<strong>Previsão do clima para próxima semana</strong>
+	</h1>
 
 
 
@@ -36,13 +38,13 @@
 					<%=p.getChuvaPrec()%>
 					mm<br> <label><strong>Chance de chuva:</strong></label>
 					<%=p.getChuvaProb()%>%
-				<p> <font color="Blue">***************************** </font>
+				<p>
+					<font color="Blue">***************************** </font>
 
-				<%
-					}
-				%>
-				
-				
+					<%
+						}
+					%>
+
 				</p>
 			</div>
 		</div>
@@ -53,10 +55,10 @@
 			</div>
 		</div>
 	</div>
-		
+
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	
+
 </body>
 
 </html>

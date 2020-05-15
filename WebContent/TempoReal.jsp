@@ -44,8 +44,30 @@
 								mm
 							</p>
 							<p>
+								<%
+									ArrayList<Clima> Climas = (ArrayList<Clima>) request.getAttribute("climas");
+									Microclima Microclima = (Microclima) climas.get(0);
+									Macroclima Macroclima = (Macroclima) climas.get(1);
+
+									String qAr;
+									if (microclima.getQualidadeAr() <= 40) {
+										qAr = "Bom";
+									} else if (microclima.getQualidadeAr() <= 80) {
+										qAr = "Moderado";
+									} else if (microclima.getQualidadeAr() <= 120) {
+										qAr = "Ruim";
+									} else if (microclima.getQualidadeAr() <= 200) {
+										qAr = "Muito ruim";
+									} else {
+										qAr = "Péssimo";
+									}
+								%>
+							
+							<p>
 								Coeficiente da qualidade do ar:
-								<%=microclima.getQualidadeAr()%></p>
+								<%=microclima.getQualidadeAr()%>
+								(<%=qAr%>)
+							</p>
 							<p>
 								Umidade:
 								<%=microclima.getUmidade()%>%
