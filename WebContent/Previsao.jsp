@@ -56,18 +56,19 @@
 						
 					</table>
 				</div>
-			</div>
-			</div>
-			<hr />
-			<div id="actions" class="row">
-				<div class="col-md-12">
-					<a href="index.html" class="btn btn-primary">Voltar</a>
-				</div>
-			</div>
 
+			</div>
+		</div>
+		<hr />
+		<div id="actions" class="row">
+			<div class="col-md-12">
+				<a href="index.html" class="btn btn-primary">Voltar</a>
+			</div>
+		</div>
+	</div>
 
-			<script src="js/jquery.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
