@@ -1,32 +1,23 @@
 package model;
 
-public class Macroclima {
+public class Macroclima extends Clima {
 	
-	private String cidade;
 	private int temperatura;
+	private int sensacao;
 	private String condicao;
 	private int umidade;
 	private int vento;
 	private int pressao;
 	
-	public Macroclima(int temperatura, String condicao, int umidade, int vento, int pressao) {
-		cidade = "São Paulo";
-		this.temperatura = temperatura;
-		this.condicao = condicao;
-		this.umidade = umidade;
-		this.vento = vento;
-		this.pressao = pressao;
-	}
-	
 	public Macroclima() {
 	}
 
-	public String getCidade() {
-		return cidade;
+	public int getSensacao() {
+		return sensacao;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setSensacao(int sensacao) {
+		this.sensacao = sensacao;
 	}
 
 	public int getTemperatura() {
@@ -71,8 +62,8 @@ public class Macroclima {
 
 	@Override
 	public String toString() {
-		return "Clima [cidade=" + cidade + ", temperatura=" + temperatura + ", condicao=" + condicao + ", umidade="
-				+ umidade + ", vento=" + vento + ", pressao=" + pressao + "]";
+		return "Macroclima [temperatura=" + temperatura + ", sensacao=" + sensacao + ", condicao=" + condicao
+				+ ", umidade=" + umidade + ", vento=" + vento + ", pressao=" + pressao + "]";
 	}
 	
 }

@@ -21,7 +21,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import model.Clima;
 import model.Macroclima;
+import model.Microclima;
 import model.Previsao;
 
 @WebServlet("/ManterClima.do")
@@ -39,6 +41,8 @@ public class ClimaController extends HttpServlet {
 		JSONObject json;
 
 		Macroclima macroclima = new Macroclima();
+		Microclima microclima = new Microclima();
+		ArrayList<Clima> climas = new ArrayList<Clima>();
 		ArrayList<Previsao> previsoes = new ArrayList<Previsao>();
 		RequestDispatcher dispatcher = null;
 
@@ -47,15 +51,30 @@ public class ClimaController extends HttpServlet {
 			json = readJsonFromUrl(
 					"http://apiadvisor.climatempo.com.br/api/v1/weather/locale/3477/current?token=25149dde939896af87233909d1ba3bfc");
 			JSONObject data = (JSONObject) json.get("data");
-			macroclima.setCidade(json.getString("name"));
 			macroclima.setTemperatura(data.getInt("temperature"));
+			macroclima.setSensacao(data.getInt("sensation"));
 			macroclima.setCondicao(data.getString("condition"));
 			macroclima.setUmidade(data.getInt("humidity"));
 			macroclima.setVento(data.getInt("wind_velocity"));
 			macroclima.setPressao(data.getInt("pressure"));
-			request.setAttribute("macroclima", macroclima);
+			
+			json = readJsonFromUrl("https://api.thingspeak.com/channels/1057428/feeds.json?api_key=6SO5PWG67BOWB9PU");
+			JSONArray feeds = (JSONArray) json.get("feeds");
+			JSONObject feed = feeds.getJSONObject(feeds.length() - 1);
+			microclima.setUmidade(feed.getDouble("field1"));
+			microclima.setTemperatura(feed.getDouble("field2"));
+			microclima.setPressao(feed.getInt("field3"));
+			microclima.setPluviosidade(feed.getInt("field4"));
+			microclima.setQualidadeAr(feed.getInt("field5"));
+			microclima.setVento(feed.getDouble("field6"));
+			
+			climas.add(microclima);
+			climas.add(macroclima);
+			
+			request.setAttribute("climas", climas);
 			dispatcher = request.getRequestDispatcher("TempoReal.jsp");
 			break;
+			
 		case "Previsao":
 			json = readJsonFromUrl(
 					"http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3477/days/15?token=25149dde939896af87233909d1ba3bfc");
