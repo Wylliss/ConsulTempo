@@ -40,3 +40,17 @@ h1 { "
 	font-weigth:700;	
 	box-shadow: 0 5px 0 #006000
 }
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.content-box {
+  background-color: #F2F2F2;
+  color: white;
+  text-align: center;
+  width: 1000px;
+}

@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import model.Clima;
+import model.Estação;
 import model.Macroclima;
 import model.Microclima;
 import model.Previsao;
@@ -39,12 +40,16 @@ public class ClimaController extends HttpServlet {
 			throws ServletException, IOException {
 		String acao = request.getParameter("acao");
 		JSONObject json;
-
+		
 		Macroclima macroclima = new Macroclima();
 		Microclima microclima = new Microclima();
+		Estação estação = new Estação();
 		ArrayList<Clima> climas = new ArrayList<Clima>();
 		ArrayList<Previsao> previsoes = new ArrayList<Previsao>();
 		RequestDispatcher dispatcher = null;
+		
+		request.setAttribute("Mini-estação", estação);
+		dispatcher = request.getRequestDispatcher("Mini-estação.jsp");	
 
 		switch (acao) {
 		case "Tempo Real":
@@ -57,7 +62,7 @@ public class ClimaController extends HttpServlet {
 			macroclima.setUmidade(data.getInt("humidity"));
 			macroclima.setVento(data.getInt("wind_velocity"));
 			macroclima.setPressao(data.getInt("pressure"));
-			
+
 			json = readJsonFromUrl("https://api.thingspeak.com/channels/1057428/feeds.json?api_key=6SO5PWG67BOWB9PU");
 			JSONArray feeds = (JSONArray) json.get("feeds");
 			JSONObject feed = feeds.getJSONObject(feeds.length() - 1);
@@ -67,23 +72,23 @@ public class ClimaController extends HttpServlet {
 			microclima.setPluviosidade(feed.getInt("field4"));
 			microclima.setQualidadeAr(feed.getInt("field5"));
 			microclima.setVento(feed.getDouble("field6"));
-			
+
 			climas.add(microclima);
 			climas.add(macroclima);
-			
+
 			request.setAttribute("climas", climas);
 			dispatcher = request.getRequestDispatcher("TempoReal.jsp");
 			break;
-			
+
 		case "Previsao":
 			json = readJsonFromUrl(
 					"http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/3477/days/15?token=25149dde939896af87233909d1ba3bfc");
 			JSONArray previsao = (JSONArray) json.get("data");
-			
+
 			for (int i = 0; i < previsao.length(); ++i) {
 				Previsao p = new Previsao();
-			    JSONObject prev = previsao.getJSONObject(i);
-			    JSONObject rain = (JSONObject) prev.get("rain");
+				JSONObject prev = previsao.getJSONObject(i);
+				JSONObject rain = (JSONObject) prev.get("rain");
 				JSONObject temp = (JSONObject) prev.get("temperature");
 				JSONObject text = (JSONObject) prev.get("text_icon");
 				text = (JSONObject) text.get("text");
@@ -95,7 +100,7 @@ public class ClimaController extends HttpServlet {
 				p.setCondicao(text.getString("pt"));
 				previsoes.add(p);
 			}
-			
+
 			request.setAttribute("previsao", previsoes);
 			dispatcher = request.getRequestDispatcher("Previsao.jsp");
 			break;
@@ -103,6 +108,9 @@ public class ClimaController extends HttpServlet {
 
 		dispatcher.forward(request, response);
 	}
+
+
+
 
 	public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
 		URLConnection openConnection = new URL(url).openConnection();
