@@ -3,6 +3,19 @@
  * style.css 
   */
 
+.row {
+	clear: left;
+}
+
+.column {
+	float: center;
+	padding: 5px;
+	align-items: center;
+	text-align: center;
+}
+
+
+
 body {
 	background-image: url(img/estac.gif);
 	background-attachment: fixed;
