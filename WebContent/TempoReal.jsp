@@ -16,7 +16,7 @@
 <body>
 
 	<h1>
-		<strong>São Paulo</strong>
+		São Paulo
 	</h1>
 	<%
 		ArrayList<Clima> climas = (ArrayList<Clima>) request.getAttribute("climas");
@@ -26,10 +26,10 @@
 
 	<div id="main" class="container">
 		<div class="row">
-			<div class="col-md-12" style="background-color: #C0C0C0;">
+			<div class="col-md-12" style="background-color: #FBF5EF;">
 
 
-				<table border="0" width="100%" cellpadding="10">
+				<table border="1" width="50%" cellpadding="10">
 					<tr>
 						<td width="50%" valign="top">
 							<h1>Micro</h1>

@@ -14,7 +14,7 @@
 
 <body>
 	<h1>
-		<strong>Previsão do clima para próxima semana</strong>
+		Previsão do clima para próxima semana
 	</h1>
 
 	<%
@@ -35,25 +35,27 @@
 				icon = "<img src='css/img/chuva.gif' width=20% alt='chuva'>";
 			}
 	%>
+
+
 	<div id="main" class="container">
 		<div id="main" class="column">
 			<div class="row">
-				<div class="col-md-12" style="background-color: #C0C0C0;">
-					<table border="2" width="100%" cellpadding="10" color="blue">
+				<div class="col-md-12" style="background-color: #FBF5EF;">
+					<table border="1" >
+						<td>
 						<tr>
-
-							<td width="50%" valign="top"><label>Data:</label><%=p.getDate()%><br>
-								<%=icon%> <br> <%=p.getCondicao()%><br></td>
-
-							<td width="50%" valign="top"><label>Min:</label> <%=p.getTempMin()%>
-								°C<br> <label>Max:</label> <%=p.getTempMax()%> °C<br>
+							<label>Data: </label><%=p.getDate()%><br>
+								<%=icon%> <br> <strong><%=p.getCondicao()%></strong><br>
+							<label>Min:</label> <%=p.getTempMin()%>
+								°C<br> <label>Max:</label> <%=p.getTempMax()%> °C<br>							
 								<label>Precipitação:</label> <%=p.getChuvaPrec()%> mm<br> <label>Chance
-									de chuva:</label> <%=p.getChuvaProb()%>%</td>
+									de chuva:</label> <%=p.getChuvaProb()%>%
 
 							<%
 								}
 							%>
-						
+							</tr>
+						</td>
 					</table>
 				</div>
 

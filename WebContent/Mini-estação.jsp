@@ -14,17 +14,12 @@
 </head>
 
 <body>
-	<h1>
-		<strong>Gráficos e indicadores</strong>
-	</h1>
-
-
-
+	<h1>Gráficos e indicadores</h1>
 
 
 	<div id="main" class="container">
 		<div class="row">
-			<div class="col-md-12" style="background-color: #C0C0C0;">
+			<div class="col-md-12">
 
 				<div class="flex-box container-box">
 					<div class="content-box">
@@ -33,7 +28,7 @@
 						<iframe width="450" height="260"
 							style="border: 1px solid #cccccc;"
 							src="https://thingspeak.com/channels/1057428/charts/2?color=%23ffae00&dynamic=true&results=60&title=Temperatura+x+Tempo&type=line"></iframe>
-							
+
 						<iframe width="450" height="260"
 							style="border: 1px solid #cccccc;"
 							src="https://thingspeak.com/channels/1057428/widgets/180300"></iframe>
@@ -56,15 +51,19 @@
 					</div>
 				</div>
 			</div>
-			<hr />
-			<div id="actions" class="row">
-				<div class="col-md-12">
-					<a href="index.html" class="btn btn-primary">Voltar</a>
-				</div>
+		</div>
+		<hr />
+
+
+		<div id="actions" class="row">
+			<div class="col-md-12">
+				<a href="index.html" class="btn btn-primary">Voltar</a>
 			</div>
 		</div>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
